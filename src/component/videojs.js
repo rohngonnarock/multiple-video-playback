@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
 export const VideoJS = (props) => {
-  const videoRef = React.useRef(null);
-  const playerRef = React.useRef(null);
+  const videoRef = useRef(null);
+  const playerRef = useRef(null);
   const { options, onReady, play, PlayBackSpeed } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     // make sure Video.js player is only initialized once
     if (!playerRef.current) {
       const videoElement = videoRef.current;
@@ -19,20 +19,28 @@ export const VideoJS = (props) => {
       }));
     } else {
       // you can update player here [update player through props]
-      const player = playerRef.current;
+      // const player = playerRef.current;
       // player.autoplay(options.autoplay);
       // player.src(options.sources);
-      if (play) {
-        player.play();
-      } else {
-        player.pause();
-      }
-      player.playbackRate(PlayBackSpeed);
     }
-  }, [options, play, PlayBackSpeed]);
+  }, [options]);
+
+  useEffect(() => {
+    const player = playerRef.current;
+    if (play) {
+      player.play();
+    } else {
+      player.pause();
+    }
+  }, [play]);
+
+  useEffect(() => {
+    const player = playerRef.current;
+    player.playbackRate(PlayBackSpeed);
+  }, [PlayBackSpeed]);
 
   // Dispose the Video.js player when the functional component unmounts
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       if (playerRef.current) {
         playerRef.current.dispose();

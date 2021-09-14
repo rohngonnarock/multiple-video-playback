@@ -64,6 +64,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
             sources: [
@@ -78,6 +79,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
             sources: [
@@ -92,6 +94,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
             sources: [
