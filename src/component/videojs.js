@@ -52,7 +52,8 @@ export const VideoJS = (props) => {
   return (
     <div style={{ flex: "1 1 50%" }} data-vjs-player>
       <video
-        height="240"
+        width="640"
+        height="264"
         ref={videoRef}
         className="video-js vjs-big-play-centered"
       />

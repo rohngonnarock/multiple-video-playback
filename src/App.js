@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import VideoJS from "./component/videojs";
+import "./App.css";
 
 function App() {
   const playerRef = React.useRef(null);
