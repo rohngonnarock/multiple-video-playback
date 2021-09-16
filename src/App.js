@@ -47,7 +47,7 @@ function App() {
         value={PlayBackSpeed}
       ></input>{" "}
       -- {`${PlayBackSpeed}`}
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", maxWidth: 900 }}>
         <VideoJS
           options={{
             ...videoJsOptions,
