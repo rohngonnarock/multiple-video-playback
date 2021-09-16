@@ -10,7 +10,7 @@ function App() {
   const videoJsOptions = {
     // lookup the options in the docs for more options
     //autoplay: true,
-    //controls: true,
+    controls: true,
     responsive: true,
     //fluid: true,
     normalizeAutoplay: true,
@@ -30,23 +30,6 @@ function App() {
   };
   return (
     <>
-      <button
-        onClick={() => {
-          setPlay(!play);
-        }}
-      >
-        Play
-      </button>
-      <input
-        type="range"
-        min="0.5"
-        max="8"
-        onChange={(e) => {
-          setPlayBackSpeed(e.currentTarget.value);
-        }}
-        value={PlayBackSpeed}
-      ></input>{" "}
-      -- {`${PlayBackSpeed}`}
       <div style={{ display: "flex", flexWrap: "wrap", maxWidth: 900 }}>
         <VideoJS
           options={{
@@ -107,6 +90,31 @@ function App() {
           }}
           onReady={handlePlayerReady}
         />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          maxWidth: 900,
+          backgroundColor: "black",
+        }}
+      >
+        <button
+          onClick={() => {
+            setPlay(!play);
+          }}
+        >
+          Play
+        </button>
+        <input
+          type="range"
+          min="0.5"
+          max="8"
+          onChange={(e) => {
+            setPlayBackSpeed(e.currentTarget.value);
+          }}
+          value={PlayBackSpeed}
+        ></input>
       </div>
     </>
   );

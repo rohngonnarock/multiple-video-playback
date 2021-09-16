@@ -1,3 +1,12 @@
 .video-js video {
   object-fit: cover;
 }
+
+button.vjs-big-play-button,
+.vjs-control-bar .vjs-fullscreen-control,
+.vjs-control-bar .vjs-picture-in-picture-control,
+.vjs-control-bar .vjs-remaining-time,
+.vjs-control-bar .vjs-progress-control,
+.vjs-control-bar .vjs-play-control {
+  display: none !important;
+}
