@@ -48,6 +48,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          stopAt={3}
           PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
@@ -63,6 +64,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          stopAt={5}
           PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
@@ -78,6 +80,7 @@ function App() {
         <VideoJS
           style={{ flex: 1 }}
           play={play}
+          stopAt={2}
           PlayBackSpeed={PlayBackSpeed}
           options={{
             ...videoJsOptions,
@@ -97,9 +100,11 @@ function App() {
           justifyContent: "space-between",
           maxWidth: 900,
           backgroundColor: "black",
+          height: 40,
         }}
       >
         <button
+          style={{ width: 100 }}
           onClick={() => {
             setPlay(!play);
           }}
